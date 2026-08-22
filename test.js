@@ -1,10 +1,12 @@
 (function () {
-    var api = "c174363df615796dee64ecab69601aa5e6ba2cb7";
-    var ct = "0";
+    var ins = document.createElement("ins");
+    ins.className = "682178b6";
+    ins.setAttribute("data-key", "68a618775d9cbab63821911cd7291dc1");
 
     var script = document.createElement("script");
-    script.src = "https://aylink.co/t89s3.js";
     script.async = true;
+    script.src = "https://cdn77.unnajd.com/5dd6f0ec.js";
 
+    document.body.appendChild(ins);
     document.body.appendChild(script);
 })();
