@@ -6,5 +6,5 @@
     script.src = "https://aylink.co/t89s3.js";
     script.async = true;
 
-    document.head.appendChild(script);
+    document.body.appendChild(script);
 })();
