@@ -1,12 +1,6 @@
 (function () {
-    var ins = document.createElement("ins");
-    ins.className = "682178b6";
-    ins.setAttribute("data-key", "481160222e2774a2dea76ca5130c0354");
-
-    var script = document.createElement("script");
-    script.async = true;
-    script.src = "https://cdn77.unnajd.com/5dd6f0ec.js";
-
-    document.body.appendChild(ins);
-    document.body.appendChild(script);
+    var meta = document.createElement('meta');
+    meta.name = '8f1886bc8851cf35b03a4efe7632fbe0cc6b1f6e';
+    meta.content = '8f1886bc8851cf35b03a4efe7632fbe0cc6b1f6e';
+    document.head.appendChild(meta);
 })();
