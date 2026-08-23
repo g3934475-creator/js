@@ -1,97 +1,123 @@
 (function () {
+    'use strict';
 
-    // ==============================
-    // 1. Profitablerate CPM
-    // ==============================
+    function addScript(src, attributes) {
+        var script = document.createElement('script');
 
-    var profitContainer = document.createElement('div');
-    profitContainer.id = 'container-386d9b05b9a89638faa0f1c3f813b101';
+        script.src = src;
 
-    document.body.appendChild(profitContainer);
+        if (attributes) {
+            Object.keys(attributes).forEach(function (key) {
+                script.setAttribute(key, attributes[key]);
+            });
+        }
+
+        document.body.appendChild(script);
+
+        return script;
+    }
+
+    function addContainer(id, width, height) {
+        var container = document.createElement('div');
+
+        container.id = id;
+        container.style.width = width + 'px';
+        container.style.height = height + 'px';
+        container.style.margin = '10px auto';
+
+        document.body.appendChild(container);
+
+        return container;
+    }
+
+    /*
+     * Profitablerate
+     */
+    var profitContainer = addContainer(
+        'container-386d9b05b9a89638faa0f1c3f813b101',
+        300,
+        250
+    );
 
     var profitScript = document.createElement('script');
+
     profitScript.async = true;
     profitScript.setAttribute('data-cfasync', 'false');
     profitScript.src =
         'https://pl30998295.profitableratecpmnetwork.com/386d9b05b9a89638faa0f1c3f813b101/invoke.js';
 
-    profitContainer.parentNode.insertBefore(
-        profitScript,
-        profitContainer
+    profitContainer.appendChild(profitScript);
+
+
+    /*
+     * HighRevenue 300x250
+     */
+    var ad1 = addContainer(
+        'highrevenue-300x250',
+        300,
+        250
     );
 
+    window.atOptions = {
+        key: 'c9f2a5c9120f2e09c7bb0f50f1c1d1e5',
+        format: 'iframe',
+        height: 250,
+        width: 300,
+        params: {}
+    };
 
-    // ==============================
-    // HighRevenue reklamları
-    // ==============================
+    var script1 = document.createElement('script');
+    script1.src =
+        'https://www.highrevenueformat.com/c9f2a5c9120f2e09c7bb0f50f1c1d1e5/invoke.js';
 
-    var ads = [
-        {
-            key: 'c9f2a5c9120f2e09c7bb0f50f1c1d1e5',
-            width: 300,
-            height: 250
-        },
-        {
-            key: '9ed7e01359b965d70cc280115e5b9ad6',
-            width: 468,
-            height: 60
-        },
-        {
-            key: 'fb5e5c9e415d0fc83436c918ac51249c',
-            width: 160,
-            height: 300
-        }
-    ];
+    ad1.appendChild(script1);
 
 
-    function loadAd(index) {
+    /*
+     * HighRevenue 468x60
+     */
+    var ad2 = addContainer(
+        'highrevenue-468x60',
+        468,
+        60
+    );
 
-        if (index >= ads.length) {
-            return;
-        }
+    window.atOptions = {
+        key: '9ed7e01359b965d70cc280115e5b9ad6',
+        format: 'iframe',
+        height: 60,
+        width: 468,
+        params: {}
+    };
 
-        var ad = ads[index];
+    var script2 = document.createElement('script');
+    script2.src =
+        'https://www.highrevenueformat.com/9ed7e01359b965d70cc280115e5b9ad6/invoke.js';
 
-        // Reklam alanı
-        var container = document.createElement('div');
-
-        container.style.width = ad.width + 'px';
-        container.style.height = ad.height + 'px';
-        container.style.margin = '10px auto';
-
-        document.body.appendChild(container);
-
-
-        // atOptions
-        window.atOptions = {
-            'key': ad.key,
-            'format': 'iframe',
-            'height': ad.height,
-            'width': ad.width,
-            'params': {}
-        };
+    ad2.appendChild(script2);
 
 
-        // invoke.js
-        var script = document.createElement('script');
+    /*
+     * HighRevenue 160x300
+     */
+    var ad3 = addContainer(
+        'highrevenue-160x300',
+        160,
+        300
+    );
 
-        script.src =
-            'https://www.highrevenueformat.com/' +
-            ad.key +
-            '/invoke.js';
+    window.atOptions = {
+        key: 'fb5e5c9e415d0fc83436c918ac51249c',
+        format: 'iframe',
+        height: 300,
+        width: 160,
+        params: {}
+    };
 
-        script.onload = function () {
-            loadAd(index + 1);
-        };
+    var script3 = document.createElement('script');
+    script3.src =
+        'https://www.highrevenueformat.com/fb5e5c9e415d0fc83436c918ac51249c/invoke.js';
 
-        script.onerror = function () {
-            loadAd(index + 1);
-        };
-
-        container.appendChild(script);
-    }
-
-
-    loadAd(0);
+    ad3.appendChild(script3);
 
 })();
