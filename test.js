@@ -1,34 +1,15 @@
 (function () {
-    // 1. reklam
-    var ins1 = document.createElement("ins");
-    ins1.className = "682178b6";
-    ins1.setAttribute("data-key", "72bcea5007b68311485f471bef869f53");
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-H78CQXCWL6';
+    document.head.appendChild(s);
 
-    var script1 = document.createElement("script");
-    script1.async = true;
-    script1.src = "https://cdn77.unnajd.com/5dd6f0ec.js";
+    window.dataLayer = window.dataLayer || [];
 
-    document.body.appendChild(ins1);
-    document.body.appendChild(script1);
+    window.gtag = function () {
+        window.dataLayer.push(arguments);
+    };
 
-    // 2. reklam
-    var ins2 = document.createElement("ins");
-    ins2.className = "682178b6";
-    ins2.setAttribute("data-key", "68a618775d9cbab63821911cd7291dc1");
-
-    var script2 = document.createElement("script");
-    script2.async = true;
-    script2.src = "https://cdn77.unnajd.com/5dd6f0ec.js";
-
-    document.body.appendChild(ins2);
-    document.body.appendChild(script2);
-
-    var ins = document.createElement("ins");
-    ins.className = "682178b6";
-    ins.setAttribute("data-key", "481160222e2774a2dea76ca5130c0354");
-    var script = document.createElement("script");
-    script.async = true;
-    script.src = "https://cdn77.unnajd.com/5dd6f0ec.js";
-    document.body.appendChild(ins);
-    document.body.appendChild(script);
+    window.gtag('js', new Date());
+    window.gtag('config', 'G-H78CQXCWL6');
 })();
