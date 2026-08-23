@@ -1,123 +1,81 @@
 (function () {
     'use strict';
 
-    function addScript(src, attributes) {
-        var script = document.createElement('script');
+    // ==============================
+    // Profitablerate
+    // ==============================
 
-        script.src = src;
+    var profitContainer = document.createElement('div');
 
-        if (attributes) {
-            Object.keys(attributes).forEach(function (key) {
-                script.setAttribute(key, attributes[key]);
-            });
-        }
+    profitContainer.id =
+        'container-c96cbe21fa5adf44f326fe0556a11259';
 
-        document.body.appendChild(script);
-
-        return script;
-    }
-
-    function addContainer(id, width, height) {
-        var container = document.createElement('div');
-
-        container.id = id;
-        container.style.width = width + 'px';
-        container.style.height = height + 'px';
-        container.style.margin = '10px auto';
-
-        document.body.appendChild(container);
-
-        return container;
-    }
-
-    /*
-     * Profitablerate
-     */
-    var profitContainer = addContainer(
-        'container-386d9b05b9a89638faa0f1c3f813b101',
-        300,
-        250
-    );
+    document.body.appendChild(profitContainer);
 
     var profitScript = document.createElement('script');
 
     profitScript.async = true;
     profitScript.setAttribute('data-cfasync', 'false');
+
     profitScript.src =
-        'https://pl30998295.profitableratecpmnetwork.com/386d9b05b9a89638faa0f1c3f813b101/invoke.js';
+        'https://pl30998371.profitableratecpmnetwork.com/c96cbe21fa5adf44f326fe0556a11259/invoke.js';
 
     profitContainer.appendChild(profitScript);
 
 
-    /*
-     * HighRevenue 300x250
-     */
-    var ad1 = addContainer(
-        'highrevenue-300x250',
-        300,
-        250
-    );
+    // ==============================
+    // HighRevenue 468x60
+    // ==============================
+
+    var ad468 = document.createElement('div');
+
+    ad468.style.width = '468px';
+    ad468.style.height = '60px';
+    ad468.style.margin = '10px auto';
+
+    document.body.appendChild(ad468);
 
     window.atOptions = {
-        key: 'c9f2a5c9120f2e09c7bb0f50f1c1d1e5',
-        format: 'iframe',
-        height: 250,
-        width: 300,
-        params: {}
+        'key': 'd9ea16b89ad3fadfedfbaba72f738bfa',
+        'format': 'iframe',
+        'height': 60,
+        'width': 468,
+        'params': {}
     };
 
-    var script1 = document.createElement('script');
-    script1.src =
-        'https://www.highrevenueformat.com/c9f2a5c9120f2e09c7bb0f50f1c1d1e5/invoke.js';
+    var script468 = document.createElement('script');
 
-    ad1.appendChild(script1);
+    script468.src =
+        'https://www.highrevenueformat.com/d9ea16b89ad3fadfedfbaba72f738bfa/invoke.js';
+
+    ad468.appendChild(script468);
 
 
-    /*
-     * HighRevenue 468x60
-     */
-    var ad2 = addContainer(
-        'highrevenue-468x60',
-        468,
-        60
-    );
+    // ==============================
+    // HighRevenue 728x90
+    // ==============================
+
+    var ad728 = document.createElement('div');
+
+    ad728.style.width = '728px';
+    ad728.style.height = '90px';
+    ad728.style.margin = '10px auto';
+
+    document.body.appendChild(ad728);
 
     window.atOptions = {
-        key: '9ed7e01359b965d70cc280115e5b9ad6',
-        format: 'iframe',
-        height: 60,
-        width: 468,
-        params: {}
+        'key': '56274d6dfb8d80e514a2e5159c4ed90c',
+        'format': 'iframe',
+        'height': 90,
+        'width': 728,
+        'params': {}
     };
 
-    var script2 = document.createElement('script');
-    script2.src =
-        'https://www.highrevenueformat.com/9ed7e01359b965d70cc280115e5b9ad6/invoke.js';
+    var script728 = document.createElement('script');
 
-    ad2.appendChild(script2);
+    script728.src =
+        'https://www.highrevenueformat.com/56274d6dfb8d80e514a2e5159c4ed90c/invoke.js';
 
-
-    /*
-     * HighRevenue 160x300
-     */
-    var ad3 = addContainer(
-        'highrevenue-160x300',
-        160,
-        300
-    );
-
-    window.atOptions = {
-        key: 'fb5e5c9e415d0fc83436c918ac51249c',
-        format: 'iframe',
-        height: 300,
-        width: 160,
-        params: {}
-    };
-
-    var script3 = document.createElement('script');
-    script3.src =
-        'https://www.highrevenueformat.com/fb5e5c9e415d0fc83436c918ac51249c/invoke.js';
-
-    ad3.appendChild(script3);
+    ad728.appendChild(script728);
 
 })();
