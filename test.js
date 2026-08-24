@@ -1,18 +1,52 @@
 (function () {
-    var frame = document.createElement("div");
+    function createAd(width, height, className, affQuery) {
+        var ins = document.createElement('ins');
 
-    frame.id = "frame";
-    frame.style.cssText =
-        "width:100%;margin:auto;position:relative;z-index:99998;";
+        ins.style.width = width + 'px';
+        ins.style.height = height + 'px';
 
-    var iframe = document.createElement("iframe");
+        ins.setAttribute('data-width', width);
+        ins.setAttribute('data-height', height);
+        ins.className = className;
+        ins.setAttribute('data-domain', '//data527.click');
+        ins.setAttribute('data-affquery', affQuery);
 
-    iframe.setAttribute("data-aa", "2453181");
-    iframe.src = "//acceptable.a-ads.com/2453181/?size=Adaptive";
-    iframe.style.cssText =
-        "border:0;padding:0;width:70%;height:auto;overflow:hidden;display:block;margin:auto;";
+        var script = document.createElement('script');
+        script.src = '//data527.click/js/responsive.js';
+        script.async = true;
 
-    frame.appendChild(iframe);
+        ins.appendChild(script);
 
-    document.body.appendChild(frame);
+        return ins;
+    }
+
+    function loadAds() {
+        var container = document.body || document.documentElement;
+
+        // 0x0 reklam
+        container.appendChild(
+            createAd(
+                0,
+                0,
+                'a54ea9623cc',
+                '/d407969cc8dd27c7d117/54ea9623cc/?placementName=default'
+            )
+        );
+
+        // 300x250 reklam
+        container.appendChild(
+            createAd(
+                300,
+                250,
+                'u82d4f1e0fc',
+                '/421cc36fafeeca0a28a8/82d4f1e0fc/?placementName=default'
+            )
+        );
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadAds);
+    } else {
+        loadAds();
+    }
 })();
